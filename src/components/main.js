@@ -76,7 +76,7 @@ function Mainpage() {
     </div>
 
 
-    <div className={styles.section3}>
+    {/* <div className={styles.section3}>
         
       <div className={styles.section3__img1}>
         
@@ -98,7 +98,7 @@ function Mainpage() {
       </div>
       
       
-    </div>
+    </div> */}
     </>
   );
 }

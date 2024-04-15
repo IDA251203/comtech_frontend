@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+// App.js
 import './App.css';
+import Mainpage from './components/main';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Products from './components/products';
+import ProductDetailsFaol from './components/Faol/faoltarmoqdata';
+import ProductDetailsPassiv from './components/Passiv/passivtarmoqdata';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route index element={<Mainpage />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:productName" element={<ProductDetailsFaol />} />
+          <Route path="/products/:productName2" element={<ProductDetailsPassiv />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

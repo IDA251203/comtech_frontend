@@ -1,0 +1,136 @@
+[
+    {
+        "nomi":"Коммутатор Ubiquiti EdgeSwitch 8 150W",
+        "birligi":"шт",
+        "soni": 50,
+        "type":"kommutator"
+    },
+    {
+        "nomi":"Коммутатор КЬЮТЭК QSW-4610-10T-AC",
+        "birligi":"шт",
+        "soni": 18,
+        "type":"kommutator"
+    },
+    {
+        "nomi":"Коммутатор доступа Eltex MES2324FB",
+        "birligi":"шт",
+        "soni": 22,
+        "type":"kommutator"
+    },
+    {
+        "nomi":"Коммутатор UniFi 8(150w) (US-8-150W)",
+        "birligi":"шт",
+        "soni": 25,
+        "type":"kommutator"
+    },
+    {
+        "nomi":"Коммутатор доступа Eltex MES2424 AC",
+        "birligi":"шт",
+        "soni": 15,
+        "type":"kommutator"
+    },
+    {
+        "nomi":"Коммутатор доступа Eltex MES2124P",
+        "birligi":"шт",
+        "soni": 20,
+        "type":"kommutator"
+    },
+    {
+        "nomi":"Коммутатор доступа Eltex MES2408",
+        "birligi":"шт",
+        "soni": 10,
+        "type":"kommutator"
+    },
+    {
+        "nomi":"Коммутатор доступа Eltex MES2428B",
+        "birligi":"шт",
+        "soni": 50,
+        "type":"kommutator"
+    },
+    {
+        "nomi":"Коммутатор Ubiquiti EdgeSwitch 8 150W",
+        "birligi":"шт",
+        "soni": 2,
+        "type":"router"
+    },
+    {
+        "nomi":"Коммутатор Ubiquiti EdgeSwitch 8 150W",
+        "birligi":"шт",
+        "soni": 2,
+        "type":"router"
+    },
+    {
+        "nomi":"Коммутатор Ubiquiti EdgeSwitch 8 150W",
+        "birligi":"шт",
+        "soni": 2,
+        "type":"router"
+    },
+    {
+        "nomi":"Коммутатор Ubiquiti EdgeSwitch 8 150W",
+        "birligi":"шт",
+        "soni": 2,
+        "type":"router"
+    },
+    {
+        "nomi":"Коммутатор Ubiquiti EdgeSwitch 8 150W",
+        "birligi":"шт",
+        "soni": 2,
+        "type":"router"
+    },
+    {
+        "nomi":"Коммутатор Ubiquiti EdgeSwitch 8 150W",
+        "birligi":"шт",
+        "soni": 2,
+        "type":"router"
+    },
+    {
+        "nomi":"Коммутатор Ubiquiti EdgeSwitch 8 150W",
+        "birligi":"шт",
+        "soni": 2,
+        "type":"router"
+    },
+    {
+        "nomi":"Сервер HPE ProLiant ML110 Gen10",
+        "birligi":"шт",
+        "soni": 2,
+        "type":"server"
+    },
+    {
+        "nomi":"RG-34-WAC Абонентский маршрутизатор",
+        "birligi":"шт",
+        "soni": 2,
+        "type":"mashrutizator"
+    },
+    {
+        "nomi":"ESR-200 Сервисный маршрутизатор",
+        "birligi":"шт",
+        "soni": 5,
+        "type":"mashrutizator"
+    },
+    {
+        "nomi":"Маршрутизатор Mikrotik hEX RB750Gr3",
+        "birligi":"шт",
+        "soni": 6,
+        "type":"mashrutizator"
+    },
+    {
+        "nomi":"Маршрутизатор Mikrotik CSS326-24G-2S+RM",
+        "birligi":"шт",
+        "soni": 4,
+        "type":"mashrutizator"
+    }
+    ,
+    {
+        "nomi":"Медиаконвертер TP-Link MC220L",
+        "birligi":"шт",
+        "soni": 4,
+        "type":"mediakonvertor"
+    }
+    ,
+    {
+        "nomi":"Точка доступа Wi-Fi Ubiquiti Rocket Prism 5AC-GEN2 (RP-5AC-Gen2)",
+        "birligi":"шт",
+        "soni": 4,
+        "type":"qabulnuqta"
+    }
+]

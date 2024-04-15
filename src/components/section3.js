@@ -1,0 +1,178 @@
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import SwipeableViews from 'react-swipeable-views';
+import { useTheme } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Zoom from '@mui/material/Zoom';
+import Fab from '@mui/material/Fab';
+import UpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { green } from '@mui/material/colors';
+import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
+import styles from './all.module.css';
+import Monobloklar from './Tables/monobloklar';
+import Noutbuklar from './Tables/noutbuklar';
+import Stolkompyuterlari from './Tables/stolkompyuterlari';
+import Kompyuterjihozlari from './Tables/Kompyuterjihozlari';
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <Typography
+      component="div"
+      role="tabpanel"
+      hidden={value !== index}
+      id={`action-tabpanel-${index}`}
+      aria-labelledby={`action-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </Typography>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `action-tab-${index}`,
+    'aria-controls': `action-tabpanel-${index}`,
+  };
+}
+
+const fabStyle = {
+  position: 'absolute',
+  bottom: 16,
+  right: 16,
+};
+
+const fabGreenStyle = {
+  color: 'common.white',
+  bgcolor: green[500],
+  '&:hover': {
+    bgcolor: green[600],
+  },
+};
+
+function SectionThree() {
+  const theme = useTheme();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const handleChangeIndex = (index) => {
+    setValue(index);
+  };
+
+  const transitionDuration = {
+    enter: theme.transitions.duration.enteringScreen,
+    exit: theme.transitions.duration.leavingScreen,
+  };
+
+  const fabs = [
+    {
+      color: 'primary',
+      sx: fabStyle,
+      icon: <UpIcon />,
+      label: 'Add',
+    },
+    {
+      color: 'secondary',
+      sx: fabStyle,
+      icon: <UpIcon />,
+      label: 'Edit',
+    },
+    {
+      color: 'primary',
+      sx: fabStyle,
+      icon: <UpIcon />,
+      label: 'Add',
+    },
+    {
+      color: 'inherit',
+      sx: { ...fabStyle, ...fabGreenStyle },
+      icon: <UpIcon />,
+      label: 'Expand',
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        bgcolor: '#6495f2',
+        width: '100%',
+        position: 'relative',
+        minHeight: '70vh',
+        color: '#fff'
+      }}
+    >
+      <AppBar position="static" color="default">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          variant="fullWidth"
+          aria-label="action tabs example"
+        >
+          <Tab label="Monobloklar" {...a11yProps(0)} />
+          <Tab label="Noutbuklar" {...a11yProps(1)} />
+          <Tab label="Stol kompyuterlari" {...a11yProps(2)} />
+          <Tab label="Kompyuter jihozlari" {...a11yProps(3)} />
+        </Tabs>
+      </AppBar>
+      <SwipeableViews
+        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        index={value}
+        onChangeIndex={handleChangeIndex}
+      >
+        <TabPanel value={value} index={0} dir={theme.direction}>
+          <h1 className={styles.titles}>MONOBLOKLAR</h1>
+          <Monobloklar/>
+        </TabPanel>
+        <TabPanel value={value} index={1} dir={theme.direction}>
+          <h1 className={styles.titles}>NOUTBUKLAR</h1>
+          <Noutbuklar/>
+        </TabPanel>
+        <TabPanel value={value} index={2} dir={theme.direction}>
+          <h1 className={styles.titles}>STOL KOMPYUTERLARI</h1>
+          <Stolkompyuterlari/>
+        </TabPanel> 
+        <TabPanel value={value} index={3} dir={theme.direction}>
+          <h1 className={styles.titles}>KOMPYUTER JIHOZLARI</h1>
+        <Kompyuterjihozlari/>
+        </TabPanel>
+      </SwipeableViews>
+      {fabs.map((fab, index) => (
+        <Zoom
+          key={fab.color}
+          in={value === index}
+          timeout={transitionDuration}
+          style={{
+            transitionDelay: `${value === index ? transitionDuration.exit : 0}ms`,
+          }}
+          unmountOnExit
+        >
+          <Link to='/'>
+            {/* <Fab sx={fab.sx} aria-label={fab.label} color={fab.color}>
+              {fab.icon}
+            </Fab> */}
+          </Link>
+        </Zoom>
+      ))}
+    </Box>
+  );
+}
+
+export default SectionThree;
+

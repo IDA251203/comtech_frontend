@@ -145,8 +145,8 @@ function Products() {
           variant="fullWidth"
           aria-label="action tabs example"
         >
-          <Tab label="Server qurilmalari" {...a11yProps(0)} />
-          <Tab label="Tarmoq qurilmalari" {...a11yProps(1)} />
+          <Tab label="Tarmoq qurilmalari" {...a11yProps(0)} />
+          <Tab label="Server qurilmalari" {...a11yProps(1)} />
           <Tab label="Monoblok,Komp..." {...a11yProps(2)} />
           <Tab label="Gadjetlar..." {...a11yProps(3)} />
         </Tabs>
@@ -157,18 +157,18 @@ function Products() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <h1 className={styles.titles}>SERVER QURILMALARI</h1>
-          <div className={styles.down__icon} onClick={handleButtonClick}>
-            <ArrowDownwardIcon/>
-          </div>
-          <SectionOne/>
-        </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
           <h1 className={styles.titles}>TARMOQ QURILMALARI</h1>
           <div className={styles.down__icon} onClick={handleButtonClick}>
             <ArrowDownwardIcon/>
           </div>
           <SectionTwo/>
+        </TabPanel>
+        <TabPanel value={value} index={1} dir={theme.direction}>
+          <h1 className={styles.titles}>SERVER QURILMALARI</h1>
+          <div className={styles.down__icon} onClick={handleButtonClick}>
+            <ArrowDownwardIcon/>
+          </div>
+          <SectionOne/>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
           <h1 className={styles.titles}>MONOBLOK, KOMPYUTER, NOUTBUK, AKSESSUARLAR</h1>

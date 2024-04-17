@@ -15,8 +15,6 @@ import { Link } from 'react-router-dom';
 import styles from './all.module.css';
 import Monobloklar from './Tables/monobloklar';
 import Noutbuklar from './Tables/noutbuklar';
-import Stolkompyuterlari from './Tables/stolkompyuterlari';
-import Kompyuterjihozlari from './Tables/Kompyuterjihozlari';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -127,8 +125,6 @@ function SectionThree() {
         >
           <Tab label="Monobloklar" {...a11yProps(0)} />
           <Tab label="Noutbuklar" {...a11yProps(1)} />
-          <Tab label="Stol kompyuterlari" {...a11yProps(2)} />
-          <Tab label="Kompyuter jihozlari" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -143,14 +139,6 @@ function SectionThree() {
         <TabPanel value={value} index={1} dir={theme.direction}>
           <h1 className={styles.titles}>NOUTBUKLAR</h1>
           <Noutbuklar/>
-        </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
-          <h1 className={styles.titles}>STOL KOMPYUTERLARI</h1>
-          <Stolkompyuterlari/>
-        </TabPanel> 
-        <TabPanel value={value} index={3} dir={theme.direction}>
-          <h1 className={styles.titles}>KOMPYUTER JIHOZLARI</h1>
-        <Kompyuterjihozlari/>
         </TabPanel>
       </SwipeableViews>
       {fabs.map((fab, index) => (

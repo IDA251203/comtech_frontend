@@ -1,0 +1,3 @@
+kommutator,
+spfmodullari,
+mashrutizatorlar

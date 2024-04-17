@@ -13,9 +13,8 @@ import { green } from '@mui/material/colors';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import styles from './all.module.css';
-import Printerlar from './Tables/printerlar';
-import IPTelefoniya from './Tables/iptelefoniya';
-import UPS from './Tables/ups';
+import Printerlar from './Tables/lazerliprinterlar';
+import Kampyuterjihoz from './Tables/kampyuterjihozlar';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -124,9 +123,8 @@ function SectionFour() {
           variant="fullWidth"
           aria-label="action tabs example"
         >
-          <Tab label="Printerlar" {...a11yProps(0)} />
-          <Tab label="IP Telefoniya" {...a11yProps(1)} />
-          <Tab label="Ups" {...a11yProps(2)} />
+          <Tab label="Kampyuter jihozlari" {...a11yProps(0)} />
+          <Tab label="Lazerli Printerlar.." {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -135,16 +133,12 @@ function SectionFour() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <h1 className={styles.titles}>PRINTERLAR</h1>
-          <Printerlar/>
+          <h1 className={styles.titles}>KAMPYUTER JIHOZLARI</h1>
+          <Kampyuterjihoz/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <h1 className={styles.titles}>IP TELEFONIYA</h1>
-          <IPTelefoniya/>
-        </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
-          <h1 className={styles.titles}>UPS</h1>
-          <UPS/>S
+          <h1 className={styles.titles}>LAZERLI PRINTERLAR..</h1>
+          <Printerlar/>
         </TabPanel>
       </SwipeableViews>
       {fabs.map((fab, index) => (

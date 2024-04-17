@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import Table from '@mui/material/Table';
@@ -8,8 +8,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Button, TextField } from '@mui/material';
-import axios from 'axios'; // axios ni import qiling
+import { Button } from '@mui/material'; 
+import styles from './all.module.css'
+import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import Zoom from '@mui/material/Zoom';
+import Fab from '@mui/material/Fab';
+import UpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { green } from '@mui/material/colors';
+import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 
 // MUI komponentlari uchun maxsus usullar
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -31,51 +39,110 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
+
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <Typography
+      component="div"
+      role="tabpanel"
+      hidden={value !== index}
+      id={`action-tabpanel-${index}`}
+      aria-labelledby={`action-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </Typography>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+
+
+const fabStyle = {
+  position: 'absolute',
+  bottom: 16,
+  right: 16,
+};
+
+const fabGreenStyle = {
+  color: 'common.white',
+  bgcolor: green[500],
+  '&:hover': {
+    bgcolor: green[600],
+  },
+};
+
 // Boshqa sahifalardagi jadval komponenti
 const TableForAllPages = (props) => {
   const { filteredRows } = props;
   // Ma'lumotlarni saqlash uchun holat
-  const [ketgantovarlarValues, setKetgantovarlarValues] = useState({});
+  // const [ketgantovarlarValues, setKetgantovarlarValues] = useState({});
 
-  // Ma'lumotlarni o'zgartirish funksiyasi
-  const handleKetgantovarlarInputChange = (e, id) => {
-    const value = e.target.value;
-    // Yangi qiymatni qo'shish
-    setKetgantovarlarValues((prevValues) => ({
-      ...prevValues,
-      [id]: value,
-    }));
-  };
-
-  // Ma'lumotlarni serverga jo'natish funksiyasi
-  const handleButtonClick = async (rowId) => {
-    try {
-      // Yangi mavjudtovarlar sonini hisoblash
-      const updatedMavjudtovarlar = calculateUpdatedMavjudtovarlar(rowId);
-      // Axios orqali serverga ma'lumotni yuborish
-      await axios.patch(`http://localhost:4000/products${rowId}`, {
-        mavjudtovarlar: updatedMavjudtovarlar,
-      });
-      // Tugmasini bosgandan so'ng, maydonni tozalash
-      setKetgantovarlarValues((prevValues) => ({
-        ...prevValues,
-        [rowId]: "",
-      }));
-    } catch (error) {
-      console.error('Xatolik yuz berdi:', error);
-    }
-  };
+  // // Ma'lumotlarni o'zgartirish funksiyasi
+  // const handleKetgantovarlarInputChange = (e, id) => {
+  //   const value = e.target.value;
+  //   // Yangi qiymatni qo'shish
+  //   setKetgantovarlarValues((prevValues) => ({
+  //     ...prevValues,
+  //     [id]: value,
+  //   }));
+  // };
 
   // Yangi mavjudtovarlar sonini hisoblash funksiyasi
-  const calculateUpdatedMavjudtovarlar = (rowId) => {
-    const ketgantovarlarValue = parseFloat(ketgantovarlarValues[rowId]) || 0;
-    const originalMavjudtovarlar = filteredRows.find(row => row.id === rowId)?.mavjudtovarlar || 0;
-    const updatedMavjudtovarlar = originalMavjudtovarlar - ketgantovarlarValue;
-    return updatedMavjudtovarlar;
+  // const calculateUpdatedMavjudtovarlar = (rowId) => {
+  //   const ketgantovarlarValue = parseFloat(ketgantovarlarValues[rowId]) || 0;
+  //   const originalMavjudtovarlar = filteredRows.find(row => row.id === parseInt(rowId))?.mavjudtovarlar || 0;
+  //   const updatedMavjudtovarlar = originalMavjudtovarlar - ketgantovarlarValue;
+  //   return updatedMavjudtovarlar;
+  // };
+
+  const theme = useTheme();
+  const [value, setValue] = React.useState(0);
+
+ 
+
+  const transitionDuration = {
+    enter: theme.transitions.duration.enteringScreen,
+    exit: theme.transitions.duration.leavingScreen,
   };
 
+  const fabs = [
+    {
+      color: 'primary',
+      sx: fabStyle,
+      icon: <UpIcon />,
+      label: 'Add',
+    },
+    {
+      color: 'secondary',
+      sx: fabStyle,
+      icon: <UpIcon />,
+      label: 'Edit',
+    },
+    {
+      color: 'primary',
+      sx: fabStyle,
+      icon: <UpIcon />,
+      label: 'Add',
+    },
+    {
+      color: 'inherit',
+      sx: { ...fabStyle, ...fabGreenStyle },
+      icon: <UpIcon />,
+      label: 'Expand',
+    },
+  ];
+
   return (
-    <>
+    <div className={styles.table__container}>
       {/* Ma'lumotlar jadvali */}
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -84,9 +151,7 @@ const TableForAllPages = (props) => {
               <StyledTableCell>Nomi</StyledTableCell>
               <StyledTableCell align="right">O'lchov Birligi</StyledTableCell>
               <StyledTableCell align="right">Omborda mavjud tavarlar soni</StyledTableCell>
-              <StyledTableCell align="right">Ombordan chiqib ketgan tavarlar soni</StyledTableCell>
               <StyledTableCell align="right">Qayerga sotildi</StyledTableCell>
-              <StyledTableCell align="right"></StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -98,21 +163,13 @@ const TableForAllPages = (props) => {
                 </StyledTableCell>
                 <StyledTableCell align="center">{row.birligi}</StyledTableCell>
                 <StyledTableCell align="center">{row.mavjudtovarlar}</StyledTableCell>
-                {/* Tekst maydoni */}
-                <StyledTableCell align="right">
+                {/* <StyledTableCell align="center">
                   <TextField
-                    id={`ketgantovarlar-${row.id}`}
-                    variant="standard"
-                    value={ketgantovarlarValues[row.id] || ""}
+                    type="number"
+                    value={ketgantovarlarValues[row.id] || ''}
                     onChange={(e) => handleKetgantovarlarInputChange(e, row.id)}
                   />
-                </StyledTableCell>
-                {/* Tugma */}
-                <StyledTableCell align="right">
-                  <Button variant="contained" onClick={() => handleButtonClick(row.id)}>
-                    Submit Changes
-                  </Button>
-                </StyledTableCell>
+                </StyledTableCell> */}
               </StyledTableRow>
             ))}
           </TableBody>
@@ -122,7 +179,25 @@ const TableForAllPages = (props) => {
       <Button variant="contained" onClick={() => window.location.reload()}>
         Reload
       </Button>
-    </>
+
+      {fabs.map((fab, index) => (
+        <Zoom
+          key={fab.color}
+          in={value === index}
+          timeout={transitionDuration}
+          style={{
+            transitionDelay: `${value === index ? transitionDuration.exit : 0}ms`,
+          }}
+          unmountOnExit
+        >
+          <Link to='/products'>
+            <Fab sx={fab.sx} aria-label={fab.label} color={fab.color}>
+              {fab.icon}
+            </Fab>
+          </Link>
+        </Zoom>
+      ))}
+    </div>
   );
 };
 

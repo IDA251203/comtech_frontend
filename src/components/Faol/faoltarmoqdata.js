@@ -6,6 +6,8 @@ import Routerlar from '../Tables/faol/Routerlar';
 import Mediakonvertorlari from '../Tables/faol/mediakonvertorlar';
 import Qabulnuqtalari from '../Tables/faol/qabulnuqtalari';
 import Radiomostlar from '../Tables/faol/radiomostlar';
+import Spfmodullari from '../Tables/faol/spfmodullari';
+import Iptelefonlar from '../Tables/faol/iptelefon';
 
 const products = [ 
   { id: 1, rout: 'kommutator', name: 'Kommutatorlar' },
@@ -13,7 +15,9 @@ const products = [
   { id: 3, rout: 'routerlar', name: 'Routerlar' },
   { id: 4, rout: 'mediakonvertorlari', name: 'Media konvertorlari' },
   { id: 5, rout: 'qabulnuqtalari', name: 'Qabul nuqtalari' },
-  { id: 6, rout: 'radiomostlar', name: 'Radiomostlar' },
+  { id: 6,rout:'radiomostlar', name: 'Radiomostlar va antenna' },
+  { id: 7,rout:'spfmodullari',name:'Spf modullari'},
+  { id: 8,rout:'iptelefonlar',name:'Ip telefonlar va Voip Shlyuz'}
 ];
 
 const ProductDetails = () => {
@@ -39,6 +43,10 @@ const ProductDetails = () => {
       return <Qabulnuqtalari />;
     case 'radiomostlar':
       return <Radiomostlar />;
+    case 'spfmodullari':
+      return <Spfmodullari/>;
+    case 'iptelefonlar':
+      return <Iptelefonlar/>
     default:
       return <div>Komponent topilmadi</div>;
   }

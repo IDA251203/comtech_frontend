@@ -8,7 +8,9 @@ const products = [
     { id: 3,rout:'routerlar', name: 'Routerlar' },
     { id: 4,rout:'mediakonvertorlari', name: 'Media konvertorlari' },
     { id: 5,rout:'qabulnuqtalari', name: 'Qabul nuqtalari' },
-    { id: 6,rout:'radiomostlar', name: 'Radiomostlar' },
+    { id: 6,rout:'radiomostlar', name: 'Radiomostlar va antenna' },
+    { id: 7,rout:'spfmodullari',name:'Spf modullari'},
+    { id: 8,rout:'iptelefonlar',name:'Ip telefonlar va Voip Shlyuz'}
   ];
 
 function Faol(){ 

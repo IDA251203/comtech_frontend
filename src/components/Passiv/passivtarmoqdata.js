@@ -2,43 +2,39 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Optikdistribyutorlar from '../Tables/passiv/optikdistribyutorlar';
-import SfpModullar from '../Tables/passiv/sfpmodullar';
-import Optiktolalikabel from '../Tables/passiv/optiktolalikabel';
-import Yamoqsimlari from '../Tables/passiv/yamoqsimlari';
-import Devorshkaflari from '../Tables/passiv/devorshkaflari';
-import Muftalar from '../Tables/passiv/muftalar';
+import Devorshkaflarii from '../Tables/passiv/devorshkaflari';
+import Yamoqsimmlari from '../Tables/passiv/patchkord';
+import Muftalarr from '../Tables/passiv/muftalar';
+import Optiktola from '../Tables/passiv/optiktolalikabel';
 
-const products = [
+const products1 = [
   { id: 1, rout: 'optikdistribyutorlar', name: 'Optik distribyutorlar, kassetalar, qutilar' },
-  { id: 2, rout: 'sfpmodullar', name: 'SFP modullari' },
-  { id: 3, rout: 'optiktolalikabel', name: 'Optik tolali kabel' },
-  { id: 4, rout: 'yamoqsimlari', name: 'Yamoq simlari' },
-  { id: 5, rout: 'devorshkaflari', name: 'Devor va pol shkaflari' },
-  { id: 6, rout: 'muftalar', name: 'Muftalar' },
+  { id: 2, rout: 'optiktolalikabel', name: 'Optik tolali kabel' },
+  { id: 3, rout: 'patchkord', name: 'Yamoq simlari' },
+  { id: 4, rout: 'shkaflar', name: 'Devor va pol shkaflari' },
+  { id: 5, rout: 'muftalar', name: 'Muftalar' },
 ];
 
 const ProductDetailsPassiv = () => {
-  const { productName2 } = useParams();
+  const { productNames } = useParams();
 
-  const product = products.find((p) => p.rout === productName2);
+  const product1 = products1.find((p) => p.rout === productNames);
 
-  if (!product) {
+  if (!product1) {
     return <div>Mahsulot topilmadi</div>;
   }
 
-  switch (product.rout) {
+  switch (product1.rout) {
     case 'optikdistribyutorlar':
       return <Optikdistribyutorlar />;
-    case 'sfpmodullar':
-      return <SfpModullar />;
-    case 'optiktolalikabel':
-      return <Optiktolalikabel />;
-    case 'yamoqsimlari':
-      return <Yamoqsimlari />;
-    case 'devorshkaflari':
-      return <Devorshkaflari />;
+    case 'patchkord':
+      return <Yamoqsimmlari/>
+    case 'shkaflar':
+      return <Devorshkaflarii/>;
     case 'muftalar':
-      return <Muftalar />;
+      return <Muftalarr/>;
+    case 'optiktolalikabel':
+      return <Optiktola/>
     default:
       return <div>Komponent topilmadi</div>;
   }

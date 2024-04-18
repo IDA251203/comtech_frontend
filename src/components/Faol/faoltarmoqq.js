@@ -17,7 +17,7 @@ function Faol(){
     return(
         <div className={styles.faolCont}>
         {products.map((product) => (
-            <Link to={`/products/${encodeURIComponent(product.rout)}`} className={styles.link}>
+            <Link to={`/products/faol/${encodeURIComponent(product.rout)}`} className={styles.link}>
               <div key={product.id} className={styles.faolCont__link}>
                 {product.name}
               </div>

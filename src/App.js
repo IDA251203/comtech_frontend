@@ -9,13 +9,13 @@ import ProductDetailsPassiv from './components/Passiv/passivtarmoqdata';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App"> 
       <Router>
         <Routes>
           <Route index element={<Mainpage />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/products/:productName" element={<ProductDetailsFaol />} />
-          <Route path="/products/:productName2" element={<ProductDetailsPassiv />} />
+          <Route path="/products/faol/:productName" element={<ProductDetailsFaol />} />
+          <Route path="/products/passiv/:productName" element={<ProductDetailsPassiv />} />
         </Routes>
       </Router>
     </div>

@@ -149,9 +149,8 @@ const TableForAllPages = (props) => {
           <TableHead>
             <TableRow>
               <StyledTableCell>Nomi</StyledTableCell>
-              <StyledTableCell align="right">O'lchov Birligi</StyledTableCell>
-              <StyledTableCell align="right">Omborda mavjud tavarlar soni</StyledTableCell>
-              <StyledTableCell align="right">Qayerga sotildi</StyledTableCell>
+              <StyledTableCell align="center">O'lchov Birligi</StyledTableCell>
+              <StyledTableCell align="center">Omborda mavjud tavarlar soni</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>

@@ -1,3 +1,4 @@
+// Faol/faoltarmoqdata.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Kommutatorlar from '../Tables/faol/kommutator';
@@ -20,7 +21,7 @@ const products = [
   { id: 8,rout:'iptelefonlar',name:'Ip telefonlar va Voip Shlyuz'}
 ];
 
-const ProductDetails = () => {
+const ProductDetailsFaol = () => {
   const { productName } = useParams();
 
   const product = products.find((p) => encodeURIComponent(p.rout) === productName);
@@ -52,4 +53,4 @@ const ProductDetails = () => {
   }
 };
 
-export default ProductDetails;
+export default ProductDetailsFaol;

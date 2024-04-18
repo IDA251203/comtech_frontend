@@ -16,9 +16,9 @@ const products1 = [
 ];
 
 const ProductDetailsPassiv = () => {
-  const { productNames } = useParams();
+  const { productName } = useParams();
 
-  const product1 = products1.find((p) => p.rout === productNames);
+  const product1 = products1.find((p) => p.rout === productName);
 
   if (!product1) {
     return <div>Mahsulot topilmadi</div>;

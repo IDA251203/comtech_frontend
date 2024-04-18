@@ -149,6 +149,7 @@ function Products() {
           <Tab label="Server qurilmalari" {...a11yProps(1)} />
           <Tab label="Monoblok,Komp..." {...a11yProps(2)} />
           <Tab label="Gadjetlar..." {...a11yProps(3)} />
+          <Tab label="Sotildi" {...a11yProps(4)}/>
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -183,6 +184,12 @@ function Products() {
             <ArrowDownwardIcon/>
           </div>
           <SectionFour/>
+        </TabPanel>
+        <TabPanel value={value} index={4} dir={theme.direction}>
+          <h1 className={styles.titles}>Qachon-qayerga sotildi</h1>
+          <div className={styles.down__icon} onClick={handleButtonClick}>
+            <ArrowDownwardIcon/>
+          </div>
         </TabPanel>
       </SwipeableViews>
       {fabs.map((fab, index) => (

@@ -177,7 +177,7 @@ const TableForAllPages = (props) => {
       </TableContainer>
       {/* Ma'lumotlarni qayta yuklash tugmachasi */}
       <Button variant="contained" onClick={() => window.location.reload()}>
-        Reload
+        Yangilash
       </Button>
 
       {fabs.map((fab, index) => (

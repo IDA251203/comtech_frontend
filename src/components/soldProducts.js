@@ -55,7 +55,7 @@ function Row(props) {
                 <TableHead className={styles.sold_products} >
                   <TableRow>
                     <TableCell>Sana</TableCell>
-                    <TableCell align="center">Haridor</TableCell>
+                    <TableCell align="center">Xaridor</TableCell>
                     <TableCell align="center">Soni</TableCell>
                     <TableCell align="center">Narxi ($)</TableCell>
                   </TableRow>

@@ -10,7 +10,7 @@ export default function Noutbuklar() {
   useEffect(() => {
     const fetchData = async () => { 
       try {
-        const response = await fetch('http://localhost:4000/products?type=noutbuklar');
+        const response = await fetch('http://localhost:4000/comtech?type=noutbuklar');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

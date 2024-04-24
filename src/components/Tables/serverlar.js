@@ -8,7 +8,7 @@ export default function Serverlar() {
   useEffect(() => {
     const fetchData = async () => { 
       try {
-        const response = await fetch('http://localhost:4000/products?type=serverlar');
+        const response = await fetch('http://localhost:4000/comtech?type=serverlar');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

@@ -11,7 +11,7 @@ export default function Qabulnuqtalari() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/products?type=qabulnuqtalari');
+        const response = await fetch('http://localhost:4000/comtech?type=qabulnuqtalari');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

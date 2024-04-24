@@ -9,7 +9,7 @@ export default function ServerKomponentlar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/products?type=serverkomponentlari');
+        const response = await fetch('http://localhost:4000/comtech?type=serverkomponentlari');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

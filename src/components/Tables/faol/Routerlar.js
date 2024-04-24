@@ -10,7 +10,7 @@ export default function Routerlar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/products?type=routerlar');
+        const response = await fetch('http://localhost:4000/comtech?type=routerlar');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

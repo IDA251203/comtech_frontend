@@ -10,7 +10,7 @@ export default function Optikdistribyutorlar() {
   useEffect(() => { 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/products?type=optikdistribyutorlar');
+        const response = await fetch('http://localhost:4000/comtech?type=optikdistribyutorlar');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

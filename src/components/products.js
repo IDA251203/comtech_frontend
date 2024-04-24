@@ -21,6 +21,7 @@ import SectionFour from './section4';
 import SectionThree from './section3';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import styles from './all.module.css'
+import SoldProducts from './soldProducts';
 
 function HomeIcon(props) {
   return (
@@ -190,6 +191,7 @@ function Products() {
           <div className={styles.down__icon} onClick={handleButtonClick}>
             <ArrowDownwardIcon/>
           </div>
+          <SoldProducts/>
         </TabPanel>
       </SwipeableViews>
       {fabs.map((fab, index) => (

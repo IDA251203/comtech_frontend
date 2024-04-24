@@ -13,7 +13,7 @@ export default function Iptelefonlar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/products?type=iptelefonlar');
+        const response = await fetch('http://localhost:4000/comtech?type=iptelefonlar');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

@@ -39,7 +39,7 @@ function Row(props) {
         <TableCell component="th" scope="row">
           {row.name}
         </TableCell>
-        <TableCell align="center">{row.narxi}</TableCell>
+        {/* <TableCell align="center">{row.narxi}</TableCell> */}
         <TableCell align="center">{row.birligi}</TableCell>
         <TableCell align="center">{row.mavjudtovarlar}</TableCell>
         <TableCell align="center">{row.type}</TableCell>
@@ -57,7 +57,7 @@ function Row(props) {
                     <TableCell>Sana</TableCell>
                     <TableCell align="center">Xaridor</TableCell>
                     <TableCell align="center">Soni</TableCell>
-                    <TableCell align="center">Narxi ($)</TableCell>
+                    {/* <TableCell align="center">Narxi ($)</TableCell> */}
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -68,7 +68,7 @@ function Row(props) {
                       </TableCell>
                       <TableCell align="center">{historyRow.xaridor}</TableCell>
                       <TableCell align="center">{historyRow.chiqibKetganTovarlarSoni}</TableCell>
-                      <TableCell align="center">{historyRow.chiqibKetganTovarlarSoni*row.narxi}</TableCell>
+                      {/* <TableCell align="center">{historyRow.chiqibKetganTovarlarSoni*row.narxi}</TableCell> */}
                     </TableRow>
                   ))}
                 </TableBody>
@@ -84,7 +84,7 @@ function Row(props) {
 Row.propTypes = {
   row: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    narxi: PropTypes.number.isRequired,
+    // narxi: PropTypes.number.isRequired,
     birligi: PropTypes.string.isRequired,
     mavjudtovarlar: PropTypes.number.isRequired,
     type: PropTypes.string.isRequired,
@@ -120,7 +120,7 @@ const SoldProducts = () => {
             <TableRow>
               <TableCell />
               <TableCell>Name</TableCell>
-              <TableCell align="center">Narxi</TableCell>
+              {/* <TableCell align="center">Narxi</TableCell> */}
               <TableCell align="center">Birligi</TableCell>
               <TableCell align="center">Mavjud tavarlar</TableCell>
               <TableCell align="center">Turi</TableCell>

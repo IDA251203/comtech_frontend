@@ -7,6 +7,7 @@ import Products from './components/products';
 import ProductDetailsFaol from './components/Faol/faoltarmoqdata';
 import ProductDetailsPassiv from './components/Passiv/passivtarmoqdata'; // <-- Komponent chaqirilgan
 
+
 function App() {
   return (
     <div className="App"> 

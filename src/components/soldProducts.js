@@ -102,7 +102,7 @@ const SoldProducts = () => {
     const [rows, setRows] = useState([]);
   
     useEffect(() => {
-        fetch('http://localhost:4000/comtech')
+        fetch('https://api.comtech-ombori.uz/comtech')
           .then((res) => res.json())
           .then((data) => {
             console.log(data); 

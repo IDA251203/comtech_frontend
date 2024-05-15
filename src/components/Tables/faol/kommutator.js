@@ -9,7 +9,7 @@ export default function Kommutatorlar() {
   useEffect(() => { 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/comtech?type=kommutator');
+        const response = await fetch('https://api.comtech-ombori.uz/comtech?type=kommutator');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

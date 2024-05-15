@@ -12,7 +12,7 @@ export default function Mediakonvertorlari() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/comtech?type=mediakonvertorlar');
+        const response = await fetch('https://api.comtech-ombori.uz/comtech?type=mediakonvertorlar');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

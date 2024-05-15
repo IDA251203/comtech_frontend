@@ -12,7 +12,7 @@ export default function Devorshkaflarii() {
   useEffect(() => { 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/comtech?type=shkaflar');
+        const response = await fetch('https://api.comtech-ombori.uz/comtech?type=shkaflar');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

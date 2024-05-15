@@ -9,7 +9,7 @@ export default function Monobloklar() {
   useEffect(() => {
     const fetchData = async () => { 
       try {
-        const response = await fetch('http://localhost:4000/comtech?type=monobloklar');
+        const response = await fetch('https://api.comtech-ombori.uz/comtech?type=monobloklar');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }

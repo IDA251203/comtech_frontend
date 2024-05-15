@@ -12,7 +12,7 @@ export default function Yamoqsimmlari() {
   useEffect(() => { 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/comtech?type=patchkord');
+        const response = await fetch('https://api.comtech-ombori.uz/comtech?type=patchkord');
         if (!response.ok) {
           throw new Error(`HTTP xato! Status: ${response.status}`);
         }
